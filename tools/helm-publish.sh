@@ -45,7 +45,7 @@ fi
 CHART_NAME=$(basename "${CHART_CANDIDATES}")
 echo -e "Helm Chart: ${GREEN}${CHART_NAME}${NC}"
 
-. /tools/enable-ssh.sh "${SSH_PRIVATE_KEY}"
+. /tools/ssh-enable.sh "${SSH_PRIVATE_KEY}"
 
 git config --global user.email "deploy-tools@targetprocess.com"
 git config --global user.name "Deploy Tools"

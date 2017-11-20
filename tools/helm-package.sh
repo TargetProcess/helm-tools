@@ -40,7 +40,9 @@ if [ ! -d "${CHART_PATH}" ]; then
 fi
 
 yawn set "${CHART_PATH}/Chart.yaml" "version" "${VERSION}"
+# old convention
 yawn set "${CHART_PATH}/values.yaml" "ImageTag" "${VERSION}"
+# new convetion
 yawn set "${CHART_PATH}/values.yaml" "image.tag" "${VERSION}"
 
 try helm lint --strict "${CHART_PATH}"
