@@ -3,7 +3,7 @@ FROM node:8-alpine
 RUN apk update && apk add ca-certificates && update-ca-certificates && apk add openssl && apk add bash
 
 #  Installing git
-RUN apk update && apk upgrade && apk add --no-cache git openssh
+RUN apk update && apk upgrade && apk add --no-cache git openssh jq
 
 #  Installing helm
 WORKDIR /tools/helm
