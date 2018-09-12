@@ -8,9 +8,9 @@ RUN apk update && apk upgrade && apk add --no-cache git openssh jq
 #  Installing helm
 WORKDIR /tools/helm
 
-RUN wget http://storage.googleapis.com/kubernetes-helm/helm-v2.10.0-linux-amd64.tar.gz \
-    && tar -xzf helm-v2.10.0-linux-amd64.tar.gz linux-amd64/helm \
-    && rm helm-v2.10.0-linux-amd64.tar.gz \
+RUN wget http://storage.googleapis.com/kubernetes-helm/helm-v2.8.2-linux-amd64.tar.gz \
+    && tar -xzf helm-v2.8.2-linux-amd64.tar.gz linux-amd64/helm \
+    && rm helm-v2.8.2-linux-amd64.tar.gz \
     && mv ./linux-amd64/helm ./ && rm -R ./linux-amd64
 
 ENV PATH /tools/helm:$PATH
