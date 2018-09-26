@@ -51,7 +51,7 @@ if [ ! "$SKIP_MAGE_TAG" = "--skip-image-tag" ]; then
   yawn set "${CHART_PATH}/values.yaml" "image.tag" "${VERSION}"
 fi
 
-try helm lint --strict "${CHART_PATH}"
+try helm lint --strict --set fullnameOverride=strict,nameOverride=strict "${CHART_PATH}"
 try helm package --save=false "${CHART_PATH}"
 
 if [ ! -d "${OUTPUT_PATH}" ]; then
