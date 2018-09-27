@@ -50,7 +50,7 @@ echo -e "Helm Chart: ${GREEN}${CHART_NAME}${NC}"
 git config --global user.email "deploy-tools@targetprocess.com"
 git config --global user.name "Deploy Tools"
 
-git clone -b "${HELM_GIT_BRANCH}" "${HELM_GIT_REPO_URL}" "${GIT_DIRECTORY}"
+git clone -b "${HELM_GIT_BRANCH}" "${HELM_GIT_REPO_URL}" "${GIT_DIRECTORY}" --depth 1
 
 mv "$CHART_CANDIDATES" "${GIT_DIRECTORY}"
 
